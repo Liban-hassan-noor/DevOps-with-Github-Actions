@@ -9,18 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:  
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'   # use Node 18 (stable LTS)
 
       - name: Install dependencies
         run: npm install
 
       - name: Run application
-        run: npm run start   # changed from 'npm run run'
+        run: npm run run   # ✅ matches your package.json
 
       - name: Run tests
-        run: npm test
+        run: npm test       # ✅ matches your package.json
